@@ -33,8 +33,8 @@ SkuSelectScrollView.setListener(new OnSkuListener() {
 组件提供[SkuViewProxy](library/src/main/java/com/wuhenzhizao/widget/SkuViewProxy.java)来对MVVM数据绑定进行支持  
 
 ```xml
-<com.wuhenzhizao.widget.SkuSelectScrollView 
-	xmlns:sku="http://schemas.android.com/apk/res-auto"
+<com.wuhenzhizao.widget.SkuSelectScrollView
+    xmlns:sku="http://schemas.android.com/apk/res-auto"
     android:id="@+id/sku_databinding"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
