@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.wuhenzhizao.bean.Sku;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**

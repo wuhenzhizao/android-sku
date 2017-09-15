@@ -1,7 +1,7 @@
 # Sku
 Android Sku Selector, 类似于淘宝，天猫，京东，支持多维属性，支持MVVM架构
 
-<img src="screenshots/Screenshot_2017-08-30-14-27-16-327_com.mx.os.play.png" width = "400" />
+<img src="screenshots/20170915_160521.gif" width = "400" />
 
 
 绑定数据
