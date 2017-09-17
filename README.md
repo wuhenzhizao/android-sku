@@ -1,14 +1,14 @@
 # Sku
 Android Sku Selector, 类似于淘宝，天猫，京东，支持多维属性，支持MVVM架构
 
-<img src="screenshots/20170915_160521.gif" width = "400" />
+<img src="screenshots/20170915_160521.gif" width = "350" />
 
 
 绑定数据
 -------
 
 ```java
-SkuSelectScrollView.setSkuList(List<Sku> skuList);
+SkuSelectScrollView.setSRkuList(List<Sku> skuList);
 ```
 
 

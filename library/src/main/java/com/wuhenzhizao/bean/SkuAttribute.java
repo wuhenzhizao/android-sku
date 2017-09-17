@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by liufei on 2017/7/20.
+ * Created by wuhenzhizao on 2017/7/20.
  */
 public class SkuAttribute implements Parcelable {
     private String key;
