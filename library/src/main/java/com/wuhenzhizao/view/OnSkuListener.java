@@ -1,4 +1,4 @@
-package com.wuhenzhizao.widget;
+package com.wuhenzhizao.view;
 
 import com.wuhenzhizao.bean.Sku;
 import com.wuhenzhizao.bean.SkuAttribute;

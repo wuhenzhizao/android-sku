@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.wuhenzhizao.bean.Sku;
 import com.wuhenzhizao.bean.SkuAttribute;
 import com.wuhenzhizao.sku.databinding.ActivityMainBinding;
-import com.wuhenzhizao.widget.OnSkuListener;
+import com.wuhenzhizao.view.OnSkuListener;
 
 import java.util.List;
 

@@ -1,7 +1,4 @@
-package com.wuhenzhizao.widget;
-
-import com.wuhenzhizao.bean.SkuAttribute;
-import com.wuhenzhizao.bean.Sku;
+package com.wuhenzhizao.view;
 
 /**
  * Created by wuhenzhizao on 2017/8/2.

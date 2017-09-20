@@ -1,4 +1,4 @@
-package com.wuhenzhizao.widget;
+package com.wuhenzhizao.view;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -7,6 +7,8 @@ import android.widget.LinearLayout;
 
 import com.wuhenzhizao.bean.Sku;
 import com.wuhenzhizao.bean.SkuAttribute;
+import com.wuhenzhizao.utils.ViewUtils;
+import com.wuhenzhizao.widget.SkuMaxHeightScrollView;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -38,7 +40,7 @@ public class SkuSelectScrollView extends SkuMaxHeightScrollView implements SkuIt
         setFillViewport(true);
         setOverScrollMode(OVER_SCROLL_NEVER);
         skuContainerLayout = new LinearLayout(context, attrs);
-        skuContainerLayout.setId(UUID.randomUUID().hashCode());
+        skuContainerLayout.setId(ViewUtils.generateViewId());
         skuContainerLayout.setOrientation(LinearLayout.VERTICAL);
         skuContainerLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         addView(skuContainerLayout);
@@ -63,7 +65,7 @@ public class SkuSelectScrollView extends SkuMaxHeightScrollView implements SkuIt
             Map.Entry<String, List<String>> entry = it.next();
 
             SkuItemLayout itemLayout = new SkuItemLayout(getContext());
-            itemLayout.setId(UUID.randomUUID().hashCode());
+            itemLayout.setId(ViewUtils.generateViewId());
             itemLayout.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT
             ));

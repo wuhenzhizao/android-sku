@@ -1,4 +1,4 @@
-package com.wuhenzhizao.widget;
+package com.wuhenzhizao.view;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.wuhenzhizao.R;
 import com.wuhenzhizao.bean.SkuAttribute;
 import com.wuhenzhizao.utils.ScreenUtils;
+import com.wuhenzhizao.utils.ViewUtils;
+import com.wuhenzhizao.widget.SkuFlowLayout;
 
 import java.util.List;
 import java.util.UUID;
@@ -44,7 +46,7 @@ public class SkuItemLayout extends LinearLayout {
         setOrientation(VERTICAL);
 
         attributeNameTv = new TextView(context);
-        attributeNameTv.setId(UUID.randomUUID().hashCode());
+        attributeNameTv.setId(ViewUtils.generateViewId());
         attributeNameTv.setTextColor(context.getResources().getColor(R.color.comm_text_gray_light));
         attributeNameTv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15);
         attributeNameTv.setIncludeFontPadding(false);
@@ -55,7 +57,7 @@ public class SkuItemLayout extends LinearLayout {
         addView(attributeNameTv);
 
         attributeValueLayout = new SkuFlowLayout(context);
-        attributeValueLayout.setId(UUID.randomUUID().hashCode());
+        attributeValueLayout.setId(ViewUtils.generateViewId());
         attributeValueLayout.setMinimumHeight(ScreenUtils.dp2PxInt(context, 30));
         attributeValueLayout.setChildSpacing(ScreenUtils.dp2PxInt(context, 20));
         attributeValueLayout.setRowSpacing(ScreenUtils.dp2PxInt(context, 15));
@@ -77,7 +79,7 @@ public class SkuItemLayout extends LinearLayout {
         attributeValueLayout.removeAllViewsInLayout();
         for (int i = 0; i < attributeValueList.size(); i++) {
             SkuItemView itemView = new SkuItemView(getContext());
-            itemView.setId(UUID.randomUUID().hashCode());
+            itemView.setId(ViewUtils.generateViewId());
             itemView.setAttributeValue(attributeValueList.get(i));
             itemView.setOnClickListener(new ItemClickListener(position, itemView));
             itemView.setLayoutParams(new SkuFlowLayout.LayoutParams(
@@ -141,7 +143,7 @@ public class SkuItemLayout extends LinearLayout {
         private int position;
         private SkuItemView view;
 
-        public ItemClickListener(int position, SkuItemView view) {
+        ItemClickListener(int position, SkuItemView view) {
             this.position = position;
             this.view = view;
         }
@@ -152,7 +154,7 @@ public class SkuItemLayout extends LinearLayout {
         }
     }
 
-    public interface OnSkuItemSelectListener {
+    interface OnSkuItemSelectListener {
         void onSelect(int position, boolean select, SkuAttribute attribute);
     }
 }

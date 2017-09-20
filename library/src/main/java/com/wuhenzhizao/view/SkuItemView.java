@@ -1,4 +1,4 @@
-package com.wuhenzhizao.widget;
+package com.wuhenzhizao.view;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

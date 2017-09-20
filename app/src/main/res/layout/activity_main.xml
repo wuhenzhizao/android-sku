@@ -22,7 +22,7 @@
             android:lines="5"
             android:padding="15dp" />
 
-        <com.wuhenzhizao.widget.SkuSelectScrollView
+        <com.wuhenzhizao.view.SkuSelectScrollView
             android:id="@+id/sku"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
