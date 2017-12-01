@@ -1,5 +1,5 @@
 # Sku
-Android Sku 选择器, 类似于淘宝，天猫，京东，支持多维属性，购物车动画，支持MVVM架构
+Android Sku选择器, 类似于淘宝，天猫，京东，支持多维属性，购物车动画，支持MVVM架构
 
 [Demo下载](https://www.pgyer.com/i29u)
 
@@ -9,8 +9,28 @@ Android Sku 选择器, 类似于淘宝，天猫，京东，支持多维属性，
 2. 支持手动输入数量；
 3. demo提供添加购物车动画
 
-<img src="screenshots/20171201_131459.gif" width = "300" />
-<img src="screenshots/20171201_131516.gif" width = "300" />
+<div style="float:left;border:solid 1px 000;margin:5px;">
+	<img src="screenshots/20171201_131459.gif" alt="screenshot" title="20171201_131459.gif" width="300">
+	<img src="screenshots/20171201_131516.gif" alt="screenshot" title="20171201_131516.gif" width="300">
+</div>
+
+添加依赖
+=======
+[![Download](https://api.bintray.com/packages/wuhenzhizao/maven/sku/images/download.svg) ](https://bintray.com/wuhenzhizao/maven/sku/_latestVersion)
+
+```xml
+buildscript {
+    allprojects {
+        repositories {
+            jcenter()
+        }
+    }
+}
+
+dependencies {
+    compile 'com.wuhenzhizao:sku:1.0.0'
+}
+```
 
 绑定数据
 -------
