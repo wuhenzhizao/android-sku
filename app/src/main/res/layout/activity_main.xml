@@ -1,32 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <TextView
+        <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+            android:id="@+id/titlebar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingTop="15dp"
-            android:text="Sku:" />
+            app:centerText="@string/product_detail"
+            app:centerType="textView"
+            app:leftType="imageBotton"
+            app:rightCustomView="@layout/layout_product_shoppingcart"
+            app:rightType="customView" />
 
         <TextView
             android:id="@+id/screen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/titlebar"
             android:lines="5"
             android:padding="15dp" />
 
-        <com.wuhenzhizao.view.SkuSelectScrollView
-            android:id="@+id/sku"
+        <ImageView
+            android:id="@+id/iv_add_cart_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="300dp"
+            android:src="@mipmap/add_cart_anim"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp" />
-    </LinearLayout>
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/comm_btn_red_selector"
+            android:text="选择sku"
+            android:textColor="@color/comm_white" />
+    </RelativeLayout>
 </layout>
 

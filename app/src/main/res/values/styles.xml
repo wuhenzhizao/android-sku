@@ -1,11 +1,47 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/appColorPrimary</item>
+        <item name="colorPrimaryDark">@color/appColorPrimaryDark</item>
+        <item name="colorAccent">@color/appColorAccent</item>
     </style>
 
+    <style name="fresco_rect">
+        <item name="fadeDuration">300</item>
+        <item name="actualImageScaleType">centerCrop</item>
+        <item name="backgroundImage">@color/comm_transparent</item>
+        <item name="placeholderImage">@color/comm_white</item>
+        <item name="placeholderImageScaleType">none</item>
+        <item name="failureImage">@color/comm_white</item>
+        <item name="failureImageScaleType">none</item>
+        <item name="retryImage">@color/comm_white</item>
+        <item name="retryImageScaleType">none</item>
+        <item name="overlayImage">@color/comm_transparent</item>
+        <item name="pressedStateOverlayImage">@color/comm_transparent</item>
+        <item name="roundedCornerRadius">3dp</item>
+        <item name="roundingBorderWidth">1dp</item>
+        <item name="roundingBorderColor">#eeeeee</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="CommonBottomDialogStyle" parent="android:Theme.Light.NoTitleBar.Fullscreen">
+        <item name="colorPrimary">@color/appColorPrimary</item>
+        <item name="colorPrimaryDark">@color/appColorPrimaryDark</item>
+        <item name="colorAccent">@color/appColorAccent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowAnimationStyle">@style/CommonBottomDialogAnim</item>
+    </style>
+
+    <style name="CommonBottomDialogAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
+    </style>
 </resources>

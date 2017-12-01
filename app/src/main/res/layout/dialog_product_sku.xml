@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/comm_white"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="150dp">
+
+                        <ImageButton
+                            android:id="@+id/ib_sku_close"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/product_sku_close_selector"
+                            android:padding="10dp"
+                            android:scaleType="centerInside"
+                            android:src="@mipmap/comm_close" />
+
+                        <TextView
+                            android:id="@+id/tv_sku_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginRight="15dp"
+                            android:ellipsize="end"
+                            android:includeFontPadding="false"
+                            android:lines="1"
+                            android:textColor="@color/comm_text_gray"
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_sku_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@id/tv_sku_info"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginRight="15dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_sku_selling_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="-2dp"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/comm_price"
+                                android:textSize="23dp" />
+
+                            <TextView
+                                android:id="@+id/tv_sku_selling_price_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:textColor="@color/comm_text_gray"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/comm_line" />
+
+                    <com.wuhenzhizao.sku.view.SkuSelectScrollView
+                        android:id="@+id/scroll_sku_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:id="@+id/tv_sku_quantity_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:text="@string/product_detail_sku_quantity"
+                            android:textColor="@color/comm_text_gray_dark"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/tv_sku_quantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/tv_sku_quantity_label"
+                            android:textColor="@color/comm_text_gray"
+                            android:textSize="11dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/btn_sku_quantity_minus"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:background="@drawable/com_sku_quantity_minus_selector"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:padding="0dp"
+                                android:text="－"
+                                android:textColor="@color/quantity_operator_text_selector"
+                                android:textSize="18dp" />
+
+                            <EditText
+                                android:id="@+id/et_sku_quantity_input"
+                                android:layout_width="40dp"
+                                android:layout_height="28dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:background="@drawable/com_sku_quantity_input_selector"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:maxLines="1"
+                                android:maxWidth="100dp"
+                                android:minWidth="21dp"
+                                android:text="1"
+                                android:textColor="@color/comm_text_gray_dark"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/btn_sku_quantity_plus"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@drawable/com_sku_quantity_plus_selector"
+                                android:gravity="center"
+                                android:padding="0dp"
+                                android:text="＋"
+                                android:textColor="@color/quantity_operator_text_selector"
+                                android:textSize="18dp" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/comm_btn_red_selector"
+                        android:text="@string/product_detail_sku_confirm"
+                        android:textColor="@color/comm_white"
+                        android:textSize="17dp" />
+                </LinearLayout>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_sku_logo"
+                    style="@style/fresco_rect"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="15dp" />
+            </FrameLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

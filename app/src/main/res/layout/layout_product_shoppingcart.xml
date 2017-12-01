@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_shopping_cart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@mipmap/shopping_cart_icon" />
+
+        <TextView
+            android:id="@+id/tv_shopping_cart_num"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_alignRight="@id/iv_shopping_cart"
+            android:layout_alignTop="@id/iv_shopping_cart"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shopping_cart_num_shape"
+            android:gravity="center"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:text="0"
+            android:textColor="@color/comm_white"
+            android:textSize="9dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

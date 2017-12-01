@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="comm_text_gray_light">#999999</color>
+    <color name="comm_text_gray">#666666</color>
+    <color name="comm_text_gray_dark">#333333</color>
+
+    <color name="comm_transparent">#00000000</color>
+    <color name="comm_white">#FFFFFF</color>
+    <color name="comm_black">#000000</color>
+    <color name="comm_yellow">#ffd022</color>
+    <color name="comm_bg">#f6f6f6</color>
+    <color name="comm_price">#ff5c5c</color>
+
+    <color name="comm_line">#dddddd</color>
 </resources>

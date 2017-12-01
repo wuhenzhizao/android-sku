@@ -1,7 +1,15 @@
 # Sku
 Android Sku Selector, 类似于淘宝，天猫，京东，支持多维属性，支持MVVM架构
 
-<img src="screenshots/20170915_160521.gif" width = "350" />
+[Demo下载](https://www.pgyer.com/i29u)
+
+功能描述
+=======
+1. 支持多维属性，库存为空判断；
+2. 支持手动输入数量；
+
+<img src="screenshots/20171201_131459.gif" width = "350" />
+<img src="screenshots/20171201_131516.gif" width = "350" />
 
 
 绑定数据
@@ -33,7 +41,7 @@ SkuSelectScrollView.setListener(new OnSkuListener() {
 组件提供[SkuViewProxy](library/src/main/java/com/wuhenzhizao/widget/SkuViewProxy.java)来对MVVM数据绑定进行支持  
 
 ```xml
-<com.wuhenzhizao.view.SkuSelectScrollView
+<SkuSelectScrollView
     xmlns:sku="http://schemas.android.com/apk/res-auto"
     android:id="@+id/sku_databinding"
     android:layout_width="match_parent"
