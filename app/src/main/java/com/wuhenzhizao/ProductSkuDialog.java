@@ -124,7 +124,7 @@ public class ProductSkuDialog extends Dialog {
         });
         binding.scrollSkuList.setListener(new OnSkuListener() {
             @Override
-            public void onUnselect(SkuAttribute unselectAttribute) {
+            public void onUnselected(SkuAttribute unselectedAttribute) {
                 selectedSku = null;
                 GImageLoader.displayUrl(context, binding.ivSkuLogo, product.getMainImage());
                 binding.tvSkuQuantity.setText(String.format(stockQuantityFormat, product.getStockQuantity()));

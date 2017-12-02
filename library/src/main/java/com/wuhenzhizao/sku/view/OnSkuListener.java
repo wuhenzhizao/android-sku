@@ -10,9 +10,9 @@ public interface OnSkuListener {
     /**
      * 属性取消选中
      *
-     * @param unselectAttribute
+     * @param unselectedAttribute
      */
-    void onUnselect(SkuAttribute unselectAttribute);
+    void onUnselected(SkuAttribute unselectedAttribute);
 
     /**
      * 属性选中

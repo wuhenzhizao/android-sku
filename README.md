@@ -46,7 +46,7 @@ SkuSelectScrollView.setSRkuList(List<Sku> skuList);
 ```java
 SkuSelectScrollView.setListener(new OnSkuListener() {
     @Override
-    public void onUnselect(SkuAttribute unselectAttribute) {}
+    public void onUnselected(SkuAttribute unselectedAttribute) {}
 
     @Override
     public void onSelect(SkuAttribute selectAttribute) {}

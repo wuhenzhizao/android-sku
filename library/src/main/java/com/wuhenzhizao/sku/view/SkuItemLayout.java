@@ -3,7 +3,6 @@ package com.wuhenzhizao.sku.view;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -97,38 +96,50 @@ public class SkuItemLayout extends LinearLayout {
         }
     }
 
+    /**
+     * 清空是否可点击，选中状态
+     */
     public void clearItemViewStatus() {
         for (int i = 0; i < attributeValueLayout.getChildCount(); i++) {
             SkuItemView itemView = (SkuItemView) attributeValueLayout.getChildAt(i);
             itemView.setSelected(false);
             itemView.setEnabled(false);
-            Log.d("sku", attributeNameTv.getText().toString() + "---" + itemView.getAttributeValue() + "---disabled");
         }
     }
 
+    /**
+     * 设置指定属性为可点击状态
+     *
+     * @param attributeValue
+     */
     public void optionItemViewEnableStatus(String attributeValue) {
         for (int i = 0; i < attributeValueLayout.getChildCount(); i++) {
             SkuItemView itemView = (SkuItemView) attributeValueLayout.getChildAt(i);
             if (attributeValue.equals(itemView.getAttributeValue())) {
                 itemView.setEnabled(true);
-                Log.d("sku", attributeNameTv.getText().toString() + "---" + itemView.getAttributeValue() + "---enabled");
             }
         }
     }
 
-    public void optionItemViewSelectStatus(List<SkuAttribute> selectValueList) {
+    /**
+     * 设置指定属性为选中状态
+     *
+     * @param selectValue
+     */
+    public void optionItemViewSelectStatus(SkuAttribute selectValue) {
         for (int i = 0; i < attributeValueLayout.getChildCount(); i++) {
             SkuItemView itemView = (SkuItemView) attributeValueLayout.getChildAt(i);
-            for (int j = 0; j < selectValueList.size(); j++) {
-                if (selectValueList.get(j).getValue().equals(itemView.getAttributeValue())) {
-                    itemView.setEnabled(true);
-                    itemView.setSelected(true);
-                    Log.d("sku", attributeNameTv.getText().toString() + "---" + itemView.getAttributeValue() + "---selected");
-                }
+            if (selectValue.getValue().equals(itemView.getAttributeValue())) {
+                itemView.setEnabled(true);
+                itemView.setSelected(true);
             }
         }
     }
 
+    /**
+     * 当前属性集合是否有选中项
+     * @return
+     */
     public boolean isSelected() {
         for (int i = 0; i < attributeValueLayout.getChildCount(); i++) {
             SkuItemView itemView = (SkuItemView) attributeValueLayout.getChildAt(i);
@@ -139,7 +150,11 @@ public class SkuItemLayout extends LinearLayout {
         return false;
     }
 
-    public String getAttributeName(){
+    /**
+     * 获取属性名称
+     * @return
+     */
+    public String getAttributeName() {
         return attributeNameTv.getText().toString();
     }
 
