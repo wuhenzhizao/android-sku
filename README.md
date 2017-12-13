@@ -39,6 +39,13 @@ dependencies {
 SkuSelectScrollView.setSRkuList(List<Sku> skuList);
 ```
 
+设置选中的sku(一个sku时，默认选中）
+-------
+
+```java
+SkuSelectScrollView.setSelectedSku(Sku sku);
+```
+
 
 设置监听
 -------

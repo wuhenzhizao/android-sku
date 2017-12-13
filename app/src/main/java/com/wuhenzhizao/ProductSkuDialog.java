@@ -231,6 +231,8 @@ public class ProductSkuDialog extends Dialog {
             binding.tvSkuInfo.setText("请选择：" + skuList.get(0).getAttributes().get(0).getKey());
         }
         binding.scrollSkuList.setSkuList(product.getSkus());
+        // 选中第三个sku
+        binding.scrollSkuList.setSelectedSku(product.getSkus().get(0));
     }
 
     private void updateQuantityOperator(int newQuantity) {
