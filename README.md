@@ -89,3 +89,9 @@ SkuSelectScrollView.setListener(new OnSkuListener() {
     sku:skuList="@{vm.skuList}"
     sku:skuViewProxy="@{vm.proxy}" />
 ```
+
+技术交流
+======
+|QQ交流群|
+|:---:|
+|<img src="screenshots/qq_group.jpeg" alt="screenshot"  width="200">|
