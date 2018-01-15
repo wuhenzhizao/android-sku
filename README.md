@@ -77,7 +77,7 @@ SkuSelectScrollView.setListener(new OnSkuListener() {
 使用MVVM架构 
 ---------- 
   
-组件提供[SkuViewDelegate](library/src/main/java/com/wuhenzhizao/sku/view/SkuViewDelegate.java)来对MVVM模式下的交互进行支持  
+组件提供[SkuViewDelegate](library/src/main/java/com/wuhenzhizao/sku/view/SkuViewDelegate.java)来对MVVM模式下的交互进行支持，未提供demo实现，如果需要，可以加下方QQ群  
 
 ```xml
 <SkuSelectScrollView
@@ -87,7 +87,7 @@ SkuSelectScrollView.setListener(new OnSkuListener() {
     android:layout_height="wrap_content"
     android:layout_marginTop="50dp"
     sku:skuList="@{vm.skuList}"
-    sku:skuViewProxy="@{vm.proxy}" />
+    sku:skuViewDelegate="@{vm.delegate}" />
 ```
 
 技术交流
