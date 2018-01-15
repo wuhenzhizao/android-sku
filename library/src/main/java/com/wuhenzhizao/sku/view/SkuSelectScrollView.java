@@ -46,12 +46,12 @@ public class SkuSelectScrollView extends SkuMaxHeightScrollView implements SkuIt
     }
 
     /**
-     * 设置SkuViewProxy，MVVM + Databinding模式下使用
+     * 设置SkuView委托，MVVM + Databinding模式下使用
      *
-     * @param proxy
+     * @param delegate
      */
-    public void setSkuViewProxy(SkuViewProxy proxy) {
-        this.listener = proxy.getListener();
+    public void setSkuViewDelegate(SkuViewDelegate delegate) {
+        this.listener = delegate.getListener();
     }
 
     /**

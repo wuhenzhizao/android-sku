@@ -4,7 +4,7 @@ package com.wuhenzhizao.sku.view;
  * Created by wuhenzhizao on 2017/8/2.
  */
 
-public class SkuViewProxy {
+public class SkuViewDelegate {
     private OnSkuListener listener;
 
     public OnSkuListener getListener() {
