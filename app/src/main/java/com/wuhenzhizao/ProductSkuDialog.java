@@ -266,7 +266,6 @@ public class ProductSkuDialog extends Dialog {
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         window.getDecorView().setPadding(0, 0, 0, 0);
        // KeyboardConflictCompat.assistWindow(getWindow());
-//状态栏颜色问题可以使用 ImmersionBar 库适配
         AppUtils.transparencyBar(getWindow());
     }
 
