@@ -1,7 +1,7 @@
 # Sku
 Android Sku选择器, 类似于淘宝，天猫，京东，支持多维属性，购物车动画，支持MVVM架构，可以直接使用
 
-[Demo下载](https://www.pgyer.com/i29u)
+[Demo下载](https://fir.im/seyb)
 
 功能描述
 =======
