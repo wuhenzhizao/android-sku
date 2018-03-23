@@ -195,18 +195,19 @@ public class ProductSkuDialog extends Dialog {
         priceFormat = context.getString(R.string.comm_price_format);
         stockQuantityFormat = context.getString(R.string.product_detail_sku_stock);
 
-        if (skuList.size() == 1) {
-            selectedSku = skuList.get(0);
-            updateSkuData(true);
-        } else {
-            updateSkuData(false);
-        }
-
+        updateSkuData();
         updateQuantityOperator(1);
     }
 
-    private void updateSkuData(boolean selected) {
-        if (selected) {
+    private void updateSkuData() {
+        binding.scrollSkuList.setSkuList(product.getSkus());
+
+        Sku firstSku = product.getSkus().get(0);
+        if (firstSku.getStockQuantity() > 0) {
+            selectedSku = firstSku;
+            // 选中第一个sku
+            binding.scrollSkuList.setSelectedSku(selectedSku);
+
             GImageLoader.displayUrl(context, binding.ivSkuLogo, selectedSku.getMainImage());
             binding.tvSkuSellingPrice.setText(String.format(priceFormat, NumberUtils.formatNumber(selectedSku.getSellingPrice() / 100)));
             binding.tvSkuSellingPriceUnit.setText("/" + product.getMeasurementUnit());
@@ -230,9 +231,6 @@ public class ProductSkuDialog extends Dialog {
             binding.btnSubmit.setEnabled(false);
             binding.tvSkuInfo.setText("请选择：" + skuList.get(0).getAttributes().get(0).getKey());
         }
-        binding.scrollSkuList.setSkuList(product.getSkus());
-        // 选中第三个sku
-        binding.scrollSkuList.setSelectedSku(product.getSkus().get(0));
     }
 
     private void updateQuantityOperator(int newQuantity) {

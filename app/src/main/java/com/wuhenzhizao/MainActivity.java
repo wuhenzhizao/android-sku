@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSkuDialog() {
-        if (dialog == null || !dialog.isShowing()) {
+        if (dialog == null) {
             dialog = new ProductSkuDialog(this);
             dialog.setData(Product.get(this), new ProductSkuDialog.Callback() {
                 @Override
