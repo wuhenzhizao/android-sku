@@ -90,10 +90,6 @@ SkuSelectScrollView.setListener(new OnSkuListener() {
     sku:skuViewDelegate="@{vm.delegate}" />
 ```
 
-# Thanks
-- @hongyangAndroid [FlowLayout](https://github.com/hongyangAndroid/FlowLayout)
-
-
 技术交流
 ======
 |QQ交流群|
