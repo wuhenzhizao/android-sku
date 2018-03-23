@@ -12,7 +12,7 @@ import com.wuhenzhizao.sku.R;
 import com.wuhenzhizao.sku.bean.SkuAttribute;
 import com.wuhenzhizao.sku.utils.ScreenUtils;
 import com.wuhenzhizao.sku.utils.ViewUtils;
-import com.wuhenzhizao.sku.widget.SkuFlowLayout;
+import com.wuhenzhizao.sku.widget.FlowLayout;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import java.util.List;
 
 public class SkuItemLayout extends LinearLayout {
     private TextView attributeNameTv;
-    private SkuFlowLayout attributeValueLayout;
+    private FlowLayout attributeValueLayout;
     private OnSkuItemSelectListener listener;
 
     public SkuItemLayout(Context context) {
@@ -54,7 +54,7 @@ public class SkuItemLayout extends LinearLayout {
         attributeNameTv.setLayoutParams(attributeNameParams);
         addView(attributeNameTv);
 
-        attributeValueLayout = new SkuFlowLayout(context);
+        attributeValueLayout = new FlowLayout(context);
         attributeValueLayout.setId(ViewUtils.generateViewId());
         attributeValueLayout.setMinimumHeight(ScreenUtils.dp2PxInt(context, 25));
         attributeValueLayout.setChildSpacing(ScreenUtils.dp2PxInt(context, 15));
@@ -89,8 +89,8 @@ public class SkuItemLayout extends LinearLayout {
             itemView.setId(ViewUtils.generateViewId());
             itemView.setAttributeValue(attributeValueList.get(i));
             itemView.setOnClickListener(new ItemClickListener(position, itemView));
-            itemView.setLayoutParams(new SkuFlowLayout.LayoutParams(
-                    SkuFlowLayout.LayoutParams.WRAP_CONTENT,
+            itemView.setLayoutParams(new FlowLayout.LayoutParams(
+                    FlowLayout.LayoutParams.WRAP_CONTENT,
                     ScreenUtils.dp2PxInt(getContext(), 25)));
             attributeValueLayout.addView(itemView);
         }

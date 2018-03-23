@@ -12,8 +12,8 @@ import com.wuhenzhizao.sku.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SkuFlowLayout extends ViewGroup {
-    private static final String LOG_TAG = SkuFlowLayout.class.getSimpleName();
+public class FlowLayout extends ViewGroup {
+    private static final String LOG_TAG = FlowLayout.class.getSimpleName();
 
     /**
      * Special value for the child view spacing.
@@ -52,11 +52,11 @@ public class SkuFlowLayout extends ViewGroup {
     private List<Integer> mHeightForRow = new ArrayList<>();
     private List<Integer> mChildNumForRow = new ArrayList<>();
 
-    public SkuFlowLayout(Context context) {
+    public FlowLayout(Context context) {
         this(context, null);
     }
 
-    public SkuFlowLayout(Context context, AttributeSet attrs) {
+    public FlowLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         TypedArray a = context.getTheme().obtainStyledAttributes(
@@ -288,7 +288,7 @@ public class SkuFlowLayout extends ViewGroup {
     /**
      * Returns the horizontal spacing between child views.
      *
-     * @return The spacing, either {@link SkuFlowLayout#SPACING_AUTO}, or a fixed size in pixels.
+     * @return The spacing, either {@link FlowLayout#SPACING_AUTO}, or a fixed size in pixels.
      */
     public int getChildSpacing() {
         return mChildSpacing;
@@ -297,7 +297,7 @@ public class SkuFlowLayout extends ViewGroup {
     /**
      * Sets the horizontal spacing between child views.
      *
-     * @param childSpacing The spacing, either {@link SkuFlowLayout#SPACING_AUTO}, or a fixed size in
+     * @param childSpacing The spacing, either {@link FlowLayout#SPACING_AUTO}, or a fixed size in
      *                     pixels.
      */
     public void setChildSpacing(int childSpacing) {
@@ -308,8 +308,8 @@ public class SkuFlowLayout extends ViewGroup {
     /**
      * Returns the horizontal spacing between child views of the last row.
      *
-     * @return The spacing, either {@link SkuFlowLayout#SPACING_AUTO},
-     * {@link SkuFlowLayout#SPACING_ALIGN}, or a fixed size in pixels
+     * @return The spacing, either {@link FlowLayout#SPACING_AUTO},
+     * {@link FlowLayout#SPACING_ALIGN}, or a fixed size in pixels
      */
     public int getChildSpacingForLastRow() {
         return mChildSpacingForLastRow;
@@ -318,8 +318,8 @@ public class SkuFlowLayout extends ViewGroup {
     /**
      * Sets the horizontal spacing between child views of the last row.
      *
-     * @param childSpacingForLastRow The spacing, either {@link SkuFlowLayout#SPACING_AUTO},
-     *                               {@link SkuFlowLayout#SPACING_ALIGN}, or a fixed size in pixels
+     * @param childSpacingForLastRow The spacing, either {@link FlowLayout#SPACING_AUTO},
+     *                               {@link FlowLayout#SPACING_ALIGN}, or a fixed size in pixels
      */
     public void setChildSpacingForLastRow(int childSpacingForLastRow) {
         mChildSpacingForLastRow = childSpacingForLastRow;
@@ -329,7 +329,7 @@ public class SkuFlowLayout extends ViewGroup {
     /**
      * Returns the vertical spacing between rows.
      *
-     * @return The spacing, either {@link SkuFlowLayout#SPACING_AUTO}, or a fixed size in pixels.
+     * @return The spacing, either {@link FlowLayout#SPACING_AUTO}, or a fixed size in pixels.
      */
     public float getRowSpacing() {
         return mRowSpacing;
@@ -339,7 +339,7 @@ public class SkuFlowLayout extends ViewGroup {
      * Sets the vertical spacing between rows in pixels. Use SPACING_AUTO to evenly place all rows
      * in vertical.
      *
-     * @param rowSpacing The spacing, either {@link SkuFlowLayout#SPACING_AUTO}, or a fixed size in
+     * @param rowSpacing The spacing, either {@link FlowLayout#SPACING_AUTO}, or a fixed size in
      *                   pixels.
      */
     public void setRowSpacing(float rowSpacing) {
