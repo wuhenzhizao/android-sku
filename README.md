@@ -28,7 +28,7 @@ buildscript {
 }
 
 dependencies {
-    compile 'com.wuhenzhizao:sku:1.0.3'
+    compile 'com.wuhenzhizao:sku:1.0.4'
 }
 ```
 
