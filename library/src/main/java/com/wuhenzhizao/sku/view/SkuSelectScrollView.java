@@ -6,10 +6,12 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
 import com.wuhenzhizao.sku.bean.Sku;
+import com.wuhenzhizao.sku.bean.SkuAttrListBean;
 import com.wuhenzhizao.sku.bean.SkuAttribute;
 import com.wuhenzhizao.sku.utils.ViewUtils;
 import com.wuhenzhizao.sku.widget.SkuMaxHeightScrollView;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -67,14 +69,39 @@ public class SkuSelectScrollView extends SkuMaxHeightScrollView implements SkuIt
      * 绑定sku数据
      *
      * @param skuList
+     * @param skuAttrList sku属性列表 从外部整理好顺序后 直接在这里赋值
      */
-    public void setSkuList(List<Sku> skuList) {
+    public void setSkuList(List<Sku> skuList, ArrayList<SkuAttrListBean> skuAttrList) {
         this.skuList = skuList;
         // 清空sku视图
         skuContainerLayout.removeAllViews();
 
         // 获取分组的sku集合
         Map<String, List<String>> dataMap = getSkuGroupByName(skuList);
+        // 这里如果skuAttrList有值 则以skuAttrList为准
+        // 这里加强验证 因为如果传入的数据和sku的数据不匹配 也会引发问题 (sku属性排序问题最多算是显示问题 如果不匹配则会造成闪退问题)
+        if(skuAttrList != null && skuAttrList.size() > 0 && skuAttrList.size() == dataMap.size()){
+            // 在转换前先做一次校验
+            boolean canUse = true;
+            for(SkuAttrListBean skuAttr: skuAttrList){  // 外层校验
+                List<String> values = dataMap.get(skuAttr.getSpecName());
+                if(values != null && values.size() > 0){
+                    for(String value :dataMap.get(skuAttr.getSpecName())){ //  内层校验
+                        if(!values.contains(value)){
+                            canUse = false;
+                        }
+                    }
+                }else{
+                    canUse = false;
+                }
+            }
+
+            if(canUse){
+                dataMap.clear();
+                dataMap = getSkuAttrListByData(skuAttrList);
+            }
+        }
+
         selectedAttributeList = new LinkedList<>();
         int index = 0;
         for (Iterator<Map.Entry<String, List<String>>> it = dataMap.entrySet().iterator(); it.hasNext(); ) {
@@ -127,6 +154,19 @@ public class SkuSelectScrollView extends SkuMaxHeightScrollView implements SkuIt
                     dataMap.get(attributeName).add(attributeValue);
                 }
             }
+        }
+        return dataMap;
+    }
+
+    /**
+     * 通过返回的数据 进行数据转换 （同上 数据源不同）
+     * @param skuAttrList sku数据
+     * @return 转换后的map
+     */
+    private Map<String, List<String>> getSkuAttrListByData(ArrayList<SkuAttrListBean> skuAttrList){
+        Map<String, List<String>> dataMap = new LinkedHashMap<>();
+        for(SkuAttrListBean skuAttr: skuAttrList){
+            dataMap.put(skuAttr.getSpecName(), skuAttr.getSpecValueList());
         }
         return dataMap;
     }
