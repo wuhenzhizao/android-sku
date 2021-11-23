@@ -21,12 +21,14 @@ import com.wuhenzhizao.bean.Product;
 import com.wuhenzhizao.databinding.DialogProductSkuBinding;
 import com.wuhenzhizao.image.GImageLoader;
 import com.wuhenzhizao.sku.bean.Sku;
+import com.wuhenzhizao.sku.bean.SkuAttrListBean;
 import com.wuhenzhizao.sku.bean.SkuAttribute;
 import com.wuhenzhizao.sku.view.OnSkuListener;
 import com.wuhenzhizao.titlebar.utils.AppUtils;
 import com.wuhenzhizao.titlebar.utils.KeyboardConflictCompat;
 import com.wuhenzhizao.utils.NumberUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -187,7 +189,7 @@ public class ProductSkuDialog extends Dialog {
         });
     }
 
-    public void setData(final Product product, Callback callback) {
+    public void setData(final Product product, ArrayList<SkuAttrListBean> skuAttrList, Callback callback) {
         this.product = product;
         this.skuList = product.getSkus();
         this.callback = callback;
@@ -195,12 +197,12 @@ public class ProductSkuDialog extends Dialog {
         priceFormat = context.getString(R.string.comm_price_format);
         stockQuantityFormat = context.getString(R.string.product_detail_sku_stock);
 
-        updateSkuData();
+        updateSkuData(skuAttrList);
         updateQuantityOperator(1);
     }
 
-    private void updateSkuData() {
-        binding.scrollSkuList.setSkuList(product.getSkus());
+    private void updateSkuData(ArrayList<SkuAttrListBean> skuAttrList) {
+        binding.scrollSkuList.setSkuList(product.getSkus(), skuAttrList);
 
         Sku firstSku = product.getSkus().get(0);
         if (firstSku.getStockQuantity() > 0) {

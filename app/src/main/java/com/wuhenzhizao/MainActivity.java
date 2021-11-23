@@ -17,6 +17,7 @@ import com.wuhenzhizao.bean.Product;
 import com.wuhenzhizao.databinding.ActivityMainBinding;
 import com.wuhenzhizao.databinding.LayoutProductShoppingcartBinding;
 import com.wuhenzhizao.sku.bean.Sku;
+import com.wuhenzhizao.sku.bean.SkuAttrListBean;
 import com.wuhenzhizao.titlebar.utils.AppUtils;
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar;
 import com.yanzhenjie.permission.AndPermission;
@@ -24,6 +25,7 @@ import com.yanzhenjie.permission.PermissionListener;
 import com.yanzhenjie.permission.Rationale;
 import com.yanzhenjie.permission.RationaleListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     private void showSkuDialog() {
         if (dialog == null) {
             dialog = new ProductSkuDialog(this);
-            dialog.setData(Product.get(this), new ProductSkuDialog.Callback() {
+            dialog.setData(Product.get(this), new ArrayList<SkuAttrListBean>(), new ProductSkuDialog.Callback() {
                 @Override
                 public void onAdded(Sku sku, int quantity) {
                     shoppingCartNum += quantity;
